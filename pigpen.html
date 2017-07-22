@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pig Pen Cipher - MiltonHolmes' Personal Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn how to use the Pigpen cipher, and solve some examples to test yourself"/>
+    <meta name="keywords" content="MiltonHolmes, milton holmes, code club, pigpen, cipher, puzzle, teaching resource"/>
+    <link href="assets/css/global.css" rel="stylesheet">
+    <link href="assets/css/pigpen.css" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse bg-primary">
+        <a class="navbar-brand" href="/">The MiltonHolmes Zone</a>
+    </nav>
+    <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="/">Home</a>
+        <a class="breadcrumb-item active" href="#">Pig Pen Cipher</a>
+    </nav>
+    <div class="container-fluid">
+        <h1 id="experiments-balls">The Pig Pen Cipher</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Introduction</h2>
+                <p>
+                    The pigpen cipher (a.k.a the Freemason's cipher or tic-tac-toe cipher) is a simple substitution cipher where the letters
+                    of the alphabet are swapped for symbols. You can see the grid on the right on desktop, or at the bottom
+                    of the page on mobile.
+                </p>
+                <p>
+                    The cipher is easy to get to grips with, and it's plenty of fun to send 'enciphered' messages between friends - but it's
+                    not been used to hide proper secrets for centuries.
+                    <br>
+                    <div class="card">
+                        <b class="card-block">Question: Why do you think nobody uses the PigPen cipher for secrets anymore?</b>
+                    </div>
+                    Still, we won't let that stop us having some fun with it. Below you'll be able to create your own Pigpen cipher messages,
+                    and then there are some pre-encoded messages waiting to be solved.
+                </p>
+                <h2>Encipher some text</h2>
+                <div id="pigpen-results-container" class="card">
+                    <div class="card-block">
+                        <form id="pigpen-form">
+                            <div class="form-group">
+                                <label for="pigpen-input-text">Input Plaintext</label>
+                                <input class="form-control" type="text" placeholder="Enter the text you want to encipher" id="pigpen-input-text">
+                            </div>
+                            <button id="pigpen-submit" type="button" onclick="pigpenSubmit()" class="btn btn-primary">Encipher!</button>
+                        </form>
+                    </div>
+                    <div class="card-block">
+                        <label>Enciphered Message <button onclick="renderExplain()" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="Warning: these messages will not be enciphered if you copy and paste elsewhere. Click for an explanation.">?</button></label>
+                        <div id="pigpen-explanation-container" class="hidden">
+                            <div class="alert alert-info">
+                                Because i'm lazy, I found a font on the internet (<a target="_blank" href="http://www.dafont.com/pigpen-cipher.font">You can find it here</a>)
+                                and i'm applying that font to the "Enciphered Message Box". The web browser just sees your plaintext message, and that's what you'll copy and paste. Feel free to write your messages down and share them on paper! 
+                            </div>
+                        </div>
+                        <div id="pigpen-results-text" class="quote parchment"></div>
+                    </div>
+                </div>
+                <h2>Decode Secret Messages!</h2>
+                <p>Below you'll see some messages encoded in PigPen - use the grid to solve them!</p>
+                <ol>
+                    <li>
+                        <!--Yep, you can solve the ciphers just by looking at the source too. Good thinking-->
+                        <p class="quote">The Crow Flies At Midnight</p>
+                    </li>
+                    <li>
+                        <p class="quote">My next cipher is in Spanish</p>
+                    </li>
+                    <li>
+                        <p class="quote">Haga clic en la cuadrícula cinco veces</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-sm-4">
+                <div class="parchment fixed-pos-slider">
+                    <h2>The Pigpen Grid</h2>
+                    <img onclick="incrementSecret()" class="img-fluid pig-pen-alphabet" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Pigpen_cipher_key.svg" alt="An Image of the Pigpen Cipher"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="success-alert"></div>
+    </div>
+    <script src="/scripts/pigpen.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script>
+        //I'm not happy about it, but Bootstrap tooltips need JQuery to function.
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+
+    </script>
+</body>
+
+</html>

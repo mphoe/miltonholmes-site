@@ -1,0 +1,47 @@
+img.pig-pen-alphabet {
+    width: 100%;
+}
+
+.quote{
+    width: 100%;
+    text-align: center;
+    font-size: 3rem; 
+    padding: 1rem 2rem;
+    word-wrap: break-word;
+}
+
+/*Quite proud of my psuedo-class wizardry here*/
+
+/*When the quote is not empty, make it pigpen text*/
+.quote:not(:empty) {
+    font-family: "PigPen"; /* The custom pigpen font found in global.css */
+}
+/*when the quote is empty, put some placeholder text in instead. This saves doing things in javascript*/
+.quote:empty:before {
+    font-family: "Tahoma";
+    font-style: italic;
+    font-size: smaller;
+    content: "(blank)";
+}
+
+.parchment {
+    background: #f4f2e0; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#f4f2e0, #cfc592); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f4f2e0, #cfc592); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f4f2e0, #cfc592); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f4f2e0, #cfc592); /* Standard syntax */
+    border: solid 2px black;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+}
+
+@media only screen and (min-width: 700px) { 
+    .fixed-pos-slider {
+        position: fixed;
+        width: 30%;
+        transform: translateX(0%);
+        overflow: auto;
+        bottom: 1rem;
+        box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.6);
+    }
+}
+

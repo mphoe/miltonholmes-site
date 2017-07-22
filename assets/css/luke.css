@@ -1,0 +1,22 @@
+.fixed-pos-slider {
+    position: fixed;
+    width: 45%;
+    transform: translateX(-2%);
+    /*being stupidly specific here so the box looks okay in 720p but doesn't need to scroll in 1080p*/
+    height: 64.6%;
+    overflow: auto;
+}
+
+.gridCell {
+    border: 1px solid;
+}
+
+#puzzleTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+#puzzleTable td {
+    width: 10%;
+    padding-bottom: 10%;
+    display: inline-block;
+}

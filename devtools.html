@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Developer Tools - MiltonHolmes' Personal Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A guide to using Chrome Developer tools to examine and manipulate web pages" />
+    <meta name="keywords" content="MiltonHolmes, milton holmes, code club, dev tools, developer, web, inspect element, teaching resource, tutorial"
+    />
+    <link href="assets/css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse bg-primary">
+        <a class="navbar-brand" href="/">The MiltonHolmes Zone</a>
+    </nav>
+    <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="/">Home</a>
+        <a class="breadcrumb-item active" href="#">Developer Tools</a>
+    </nav>
+    <div id="top" class="container">
+        <h1>Developer Tools Guide</h1>
+        <div id="pre-req-card" class="card text-center">
+            <h4 class="card-header">
+                Pre-requisites
+            </h4>
+            <div class="card-block">
+                <p>Make sure you're using Google Chrome as your web browser.</p>
+                <p>This guide will assume you are using a Windows PC (some keyboard commands are different on Mac, and Mobile
+                    doesn't have them at all)</p>
+                <button onclick="closeCard()" title="Close this reminder, create a cookie" class="btn btn-secondary">Got it</button>
+            </div>
+        </div>
+    </div>
+    <div id="opening" class="container">
+        <h2>Opening the Developer Tools</h2>
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <p>You can open the developer tools by either pressing <span class="keyboard-key">F12</span> or <span class="keyboard-key">Ctrl</span>,
+                    <span class="keyboard-key">Shift</span>,<span class="keyboard-key">i</span> (which will open on the Elements
+                    tab) Alternatively, right-click and choose "Inspect". </p>
+                <p>To reposition the developer tools, click the three-dot button in the top right corner and choose one of the
+                    symbols next to Dock Side (pictured). I'm a fan of the first and third options - seperate-window and
+                    bottom-docked.
+                </p>
+            </div>
+            <div class="col-md-4 align-self-center row justify-content-center">
+                <img class="img-fluid img-thumbnail" src="assets/images/devtoolsDock.PNG" alt="The dock options for the devtools dialog"
+                />
+            </div>
+        </div>
+    </div>
+    <div id="elements" class="container">
+        <h2>Elements Tab</h2>
+        <p>
+            The Elements tab lets you look at all of the HTML elements that make up the webpage you're on. On the right you can see a
+            window with Styles (CSS) in it, you can also edit this. <br> To select Elements, right
+            click on them and select "Inspect" - or press <span class="keyboard-key">Ctrl</span>,
+            <span class="keyboard-key">Shift</span>,<span class="keyboard-key">C</span> and left click on the element you wish to inspect.
+        </p>
+        <p><b>Note:</b> <i>Any changes you make in the Elements tab are only affecting the page that your web browser has downloaded.
+            When you refresh (by pressing <span class="keyboard-key">F5</span> maybe) your browser bins your local version
+            and downloads the page again.</i>
+            <h3>Tasks</h3>
+            <div class="row">
+                <div class="col-md-8">
+                    <ol>
+                        <li>Inspect the box that says "Inpect Me!" - the element should appear in the Elements tab</li>
+                        <li>Double click on the inner HTML (the text "Inspect Me!") and change it to something else. - notice
+                            that the box has changed on the webpage</li>
+                        <li>Double click on the Class (the text "alert alert-warning") and replace "alert-warning" with "alert-success"</li>
+                    </ol>
+                    <h3>Extension tasks</h3>
+                    <ul>
+                        <li>Edit the CSS rules in the class of "alert-success" and change the background-color - you can do this
+                            in the Styles window.</li>
+                        <li>Find the secret span hidden in one of the boxes, and unhide it - HINT: it has the class "hidden"</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 align-self-center">
+                    <div class="alert alert-warning">Inspect me!</div>
+                    <div class="alert alert-warning">I am also here</div>
+                    <div class="alert alert-warning"><span>Inspect me for a secret!</span><span class="hidden"> I have been hidden by CSS. Unhide me!</span></div>
+                </div>
+            </div>
+    </div>
+    <div id="console" class="container">
+        <h2>Console Tab</h2>
+        <p>The console is really cool, it allows you to see logs, errors and other messages - and change the webpage
+            with javascript in real time. The first thing you'll notice is a console log saying "Hello World" - I made
+            this in the devtools.js file that is imported into this page. We'll come to this later.
+        </p>
+        <p>You can type things into the console by clicking on the line that starts with <span style="font-size: larger; color: #316ad5">></span>            - then just type anything javascript.</p>
+        <p><b>Note:</b> <i>You can toggle a Console window beneath any Dev Tools tab by pressing <span class="keyboard-key">Esc</span>            - sometimes it's helpful to have the console available wherever you are.</i></p>
+		<h3>Tasks</h3>
+        <ol>
+            <li>Type <b class="terminal">console.log("hello there");</b> into the console. - notice that the message is printed
+                out.
+            </li>
+            <li>Type <b class="terminal">console.error("help me");</b> into the console. - the message is printed out and coloured
+                red, because it's an error!</li>
+            <li>Type <b class="terminal">document.getElementById("anchor").innerHTML = "I'm the inner HTML";</b> into the console.
+                - Can you see it appear on the page?</li>
+            <li>Type <b class="terminal">document.getElementById("anchor").className = "alert alert-success";</b> into the console.
+                - Notice how the text has now become a green box!</li>
+        </ol>
+
+        <p>If you've done the last two tasks, you've just used Javascript to get the element with an id of "anchor" and then
+            change the text inside it and it's CSS classes - which is pretty cool! document.getElementById is something I
+            use all the time to get bits of the page and then modify them.</p>
+        <p><b>Note:</b> <i>Just like the Elements Tab, any changes you make in the Sources tab are only affecting your local page,
+            and aren't permanent.</i></p>
+
+        <div id="anchor" title="Yar! I'm an anchor for adding new elements to"></div>
+    </div>
+    <div id="sources" class="container">
+        <h2>Sources Tab</h2>
+        <p>This tab lets you look at files used by the current page. The left-hand window shows you all the folders and files
+            (HTML, CSS, Javascript) the page is using. The middle window displays the file you currently have selected. The
+            right-hand window contains a lot of complicated things like the Call Stack that I won't go into here. </p>
+        <h3>Task</h3>
+        <p>Look inside "scripts" for <b class="terminal">devtools.js</b> - it's the javascript file that this webpage uses. See if you can find where the "Hello world" console log is. I've stuck in a bunch of comments (beginning with // and in green) to help you understand.</p>
+    </div>
+    <div id="network" class="container">
+        <h2>Network Tab</h2>
+        <p>This tab will monitor all network activity that happens on the webpage. This includes:</p>
+        <ul>
+            <li>HTML, CSS, Image and Javascript files that make up the page</li>
+            <li>Requests to and from the server (not currently featured in this page)</li>
+            <li>Streaming of videos - watch a video on youtube and see the chunks downloaded bit by bit</li>
+        </ul>
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <p>Once you've started recording (this should happen when you open the Network tab) and refreshed the page (by
+                    pressing <span class="keyboard-key">F5</span> maybe) the tab will have a timeline running along the top
+                    and a table showing everything that's happening on the network (as mentioned above). I'll explain what
+                    each column means:
+                </p>
+                <dl class="row">
+                    <dt class="col-sm-3">Name</dt>
+                    <dd class="col-sm-9">The file/request's name</dd>
+                    <dt class="col-sm-3">Status</dt>
+                    <dd class="col-sm-9">The HTTP status code. 200 codes mean success, 400 codes (such as the legendary 404 "not found") are errors.
+                        Find out more here: <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Wiki Page for HTTP codes</a></dd>
+                    <dt class="col-sm-3">Type</dt>
+                    <dd class="col-sm-9">The type of file being requested - could be for a javascript file or xhr (a GET request for information) for example</dd>
+                    <dt class="col-sm-3">Initiator</dt>
+                    <dd class="col-sm-9">What made the request? Was it the web page (so "devtools" in this case) or was it one of the scripts?</dd>
+                    <dt class="col-sm-3">Size</dt>
+                    <dd class="col-sm-9">How big the request/response was in bytes</dd>
+                    <dt class="col-sm-3">Time</dt>
+                    <dd class="col-sm-9">How long the request took overall</dd>
+                    <dt class="col-sm-3">Waterfall</dt>
+                    <dd class="col-sm-9">A visual breakdown of how long the request took. Hover over a blob to see exactly how long each bit of
+                        the request (such as <b class="terminal">Waiting (<a target="_blank" href="https://en.wikipedia.org/wiki/Time_To_First_Byte">TTFB</a>)</b>                        - for the server to respond)</dd>
+                </dl>
+            </div>
+            <div class="col-md-4 align-self-center row justify-content-center">
+                <img class="img-fluid img-thumbnail" src="assets/images/devtoolsWaterfall.PNG" alt="the Waterfall column of the network table"
+                />
+            </div>
+        </div>
+    </div>
+    <div id="application" class="container">
+        <h2>Application Tab (Specifically Cookies)</h2>
+        <p>This tab is pretty complicated, and I'm only going to introduce you to one part of it - Cookies. In the window on
+            the left-hand side of the tab, look under Storage for Cookie. If you expand that, you'll see the current website
+            and any cookies you're storing for it.</p>
+        <h3>What are cookies?</h3>
+        <p>Cookies are small pieces of information that the webpage stores locally on your web browser, so that when you come back to the site it can read them and "remember" things - such as what items you had in your cart on a shopping website. Cookies have a name, a value and an expiry time (so you can tell them how long to stick around for)</p>
+        <p><b>For Example:</b> At the top of this page is a "Pre-requisites" card. If you click the "Got it" button it will hide the card and create a cookie called "cardClosed" that tells the page you've closed the card. The page checks for this cookie every time you load up, so the card won't appear if you refresh the page. <b>Don't worry though!</b> the cookie expires after 10 minutes, so the card isn't gone forever.</p>
+        <p>You can look at and delete the cookie in the Application tab. (As seen in the picture below)</p>
+        <div class="row justify-content-center">
+                <img class="img-fluid img-thumbnail" src="assets/images/devtoolsCookie.PNG" alt="The cookie panel" />
+        </div>
+    </div>
+    <div id="network" class="container">
+        <h2>The other tabs</h2>
+        <p>
+            You might be wondering why I haven't covered the Performance, Memory, Security and Audits tab. This is because I don't know
+            much about them. I'll sum up what I know below:
+        </p>
+        <dl class="row">
+            <dt class="col-sm-3">Performance tab</dt>
+            <dd class="col-sm-9">This will record your use of the webpage and tell you how much time was spent Loading it, running Scripts and
+                Rendering the page.</dd>
+            <dt class="col-sm-3">Memory tab</dt>
+            <dd class="col-sm-9">You can take snapshots of how much memory (RAM) the webpage is currently taking up - breaking it down into a
+                whole bunch of things that I don't understand</dd>
+            <dt class="col-sm-3">Security tab</dt>
+            <dd class="col-sm-9">Here you can check out how secure your connection to the website is. This includes what protocol you're using
+                (TSL 1.2 in this case) and what certificate you have. If you View Certificate, you'll see i've got a certificate
+                for this site, which tells your browser that it's trustworthy.</dd>
+            <dt class="col-sm-3">Audits tab</dt>
+            <dd class="col-sm-9">This will look through your page and tell you how you could make it better. My page for example isn't making
+                great use of the CSS rules it can access. (this is because i'm using Bootstrap, which has a huge number of
+                rules, an dthe idea is that you pick and choose)</dd>
+        </dl>
+    </div>
+    <script src="/scripts/devtools.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

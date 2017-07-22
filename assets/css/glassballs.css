@@ -1,0 +1,102 @@
+#glass-balls-canvas {
+    background: #0066ff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#0066ff, #aaccff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0066ff, #aaccff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0066ff, #aaccff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0066ff, #aaccff); /* Standard syntax */
+    padding: 2em;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+#glass-balls-canvas .grass {
+    background: green;
+    margin: -2px 0 0 0;
+    height: 50px;
+    border: solid black 2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.building-roof {
+    background: #e3dbdb;
+    border: solid black 2px;
+    height: 30px;
+}
+
+.building-foundations {
+    background: grey;
+    border: solid black 2px;
+    height: 30px;
+}
+
+#building-floors-anchor {
+    list-style: none;
+    margin: 0rem;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.building-floor {
+    background: #916f6f;
+    border-bottom: 2px solid #755a5a;
+    flex: 0 0 auto;
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+
+    transition: cubic-bezier(0, 0, 0.2, 1) 0.5s;
+}
+
+.building-floor:hover {
+    background: #6d5454;
+    cursor: pointer;
+}
+
+.building-floor:first-child {
+    border-bottom: none;
+}
+
+.building-floor .window {
+    background: #d3e7ff;
+    border: solid black 2px;
+    height: 15px;
+    width: 20px;
+    margin: 0.4rem;
+}
+
+.building-floor.less {
+    background: #265dc1;
+}
+
+.building-floor.more {
+    background: #d63a3a;
+}
+
+.building-floor.correct {
+    background: #23a523;
+}
+
+@media only screen and (min-width: 700px) { 
+    .fixed-pos-slider {
+        position: fixed;
+        width: 45%;
+        transform: translateX(-2%);
+        /*being stupidly specific here so the box looks okay in 720p but doesn't need to scroll in 1080p*/
+        height: 64.6%;
+        overflow: auto;
+    }
+}
+
+.floor-number {
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    width: 2rem;
+}

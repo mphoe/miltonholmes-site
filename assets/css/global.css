@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "PigPen";
+    src: url('../fonts/PigPenCipher.otf');
+}
+
+body {
+    background: #eee !important;
+}
+
+/*Because Bootstrap 4 isn't what i'm used to, here are some overrides*/
+h1 {
+    margin: 2rem 0.5rem !important;
+}
+
+h2 {
+    margin: 2rem 1rem !important;
+}
+
+label {
+    font-weight: bold;
+}
+
+.card {
+    margin: 0.5rem;
+}
+
+.card-link {
+    color: #292b2c !important;
+}
+
+img.card-img-top {
+    width: 100%;
+}
+
+img.bordered {
+    border: solid 3px black;
+}
+
+.card-link .card:hover {
+    box-shadow: 0px 0px 15px rgb(30,120,220);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.breadcrumb {
+    padding-left: 2rem !important;
+    background: white !important;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+    border-radius: 0px !important;
+}
+
+/* New stuff below this point */
+
+.hidden {
+    display: none;
+}
+
+#success-alert {
+    position: fixed;
+    bottom: 1rem;
+    z-index: 9999;
+    /* left: 2rem; */
+    width: 80%;
+    text-align: center;
+    margin: 0px 10%;
+    box-shadow: 0px 1px 14px rgba(0,50,0,0.6);
+}
+
+.keyboard-key {
+    background: white;
+    border: darkgray 1px solid;
+    border-radius: 3px;
+    box-shadow: 0 2px 0px 1px #777;
+    padding: 2px 5px;
+    margin: 0 5px;
+
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    cursor: default;
+}
+
+.terminal {
+    font-family: monospace;
+    font-size: larger;
+    word-break: break-word;
+}

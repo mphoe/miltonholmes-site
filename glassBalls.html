@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Glass Balls Experiment - MiltonHolmes' Personal Site</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="An example of the use of Binary search, analogised through glass balls being dropped from a tower"/>
+        <meta name="keywords" content="MiltonHolmes, milton holmes, code club, binary search, glass balls, skyscraper, teaching resource"/>    
+        <link href="assets/css/global.css" rel="stylesheet">
+        <link href="assets/css/glassballs.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="icon" href="assets/images/favicon.ico">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse bg-primary">
+            <a class="navbar-brand" href="/">The MiltonHolmes Zone</a>
+        </nav>
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="/">Home</a>
+            <a class="breadcrumb-item active" href="#">Glass Balls Experiment</a>
+        </nav>
+        <div class="container-fluid">
+            <h1 id="experiments-balls">Glass Balls and Skyscrapers</h1>
+        </div>
+        <div id="success-alert"></div>
+        <div id="glass-balls-canvas" class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="fixed-pos-slider">
+                        <div class="card">
+                            <div class="card-block">
+                                <h3>The Mission</h3>
+                                <p>
+                                    You have a huge collection of identical glass balls, and you want to find the height you can drop the balls from without them breaking. 
+                                    Fortunately you live in a skyscraper and you have access to a window at each floor. 
+                                    Balls dropped from below their limit will be fine, but drop a ball from too high up and it will shatter.
+                                </p>
+                                <h3>Goals</h3>
+                                <ol>
+                                    <li>Find out the highest floor you can drop the balls from without them breaking. Try to break the fewest balls possible. What was your technique?</li>
+                                    <li>Now try to aim for the fewest attempts possible, it doesn't matter how many you break. How have you changed your technique?</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div id="building-controls-container">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="card-title">Click a floor to guess it</h4>
+                                    <p class="card-text">Red is too high and the ball will smash - blue is too low, but the ball survives</p>
+                                    <button id="reset-button" class="btn btn-danger" onclick="resetBalls()">Reset building</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-block">
+                                    <p class="card-text"><b>Guesses taken: </b><span id="live-guess">0</span></p>
+                                    <p class="card-text"><b>Broken balls: </b><span id="live-broken">0</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="building-container">
+                        <!--This is not a screen reader accessible exercise and I know it. -->
+                        <div class="building-roof"></div>
+                        <ul id="building-floors-anchor"></ul>
+                        <div class="building-foundations"></div>
+                    </div>
+                     <div class="grass"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/scripts/glassBalls.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>
