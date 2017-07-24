@@ -1,0 +1,8 @@
+{
+  "name": "miltonholmes-site",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
