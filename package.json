@@ -1,8 +1,9 @@
 {
   "name": "miltonholmes-site",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "devDependencies": {},
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "sitemap-generator": "^7.2.3"
   }
 }

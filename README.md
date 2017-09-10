@@ -11,3 +11,10 @@ To install required packages, from the root directory run:
 To run the web server, from the root directory:
 
 ` node index.js ` 
+
+# Site Mapper
+
+I've installed [sitemap-generator](https://www.npmjs.com/package/sitemap-generator) and written a quick script to generate a XML sitemap of the site.
+Run this with:
+
+` node sitemapper.js `
