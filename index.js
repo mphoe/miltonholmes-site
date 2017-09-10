@@ -4,7 +4,7 @@ const port = 3000
 
 const path = require('path');
 
-app.use(express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 
 app.get('/', (request, response) => {  
